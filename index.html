@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<!--这个结构是注释-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>泉州簪花绘本</title>
+        <link rel="stylesheet" href="css/Untitled-1.css">
+        <script src="js/Untitled-1.js"></script>
+        <style>
+            .header{
+                position:relative;
+                display: block;
+                color:rgba(111,70,68);
+                font-size:4vmax;
+                text-align: center;
+                height: 10%;
+                top:0%;
+                background-color: rgb(255, 222, 159);
+                line-height: 1.5vw;
+            }
+            .footer{
+                position: absolute;
+                display: block;
+                text-align: center;
+                font-size: 1vmax;
+                color:rgba(111,70,68);
+                width: 100%;
+                height: 100px;
+                bottom:0;
+                background-color: rgb(255, 222, 159);
+                border-bottom: 10px solid rgba(0, 0, 0, 0.5);
+                padding-bottom: 10px;
+            }
+            .footer img {
+                width: 40px;  
+                height: 40px; 
+                border-radius: 50%; 
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="header"><br>蟳埔花海<br></div>
+        <div class="content">
+            <img class="imgs" id="imgsrc" style="display:block;" src="" alt="Example Image1">
+            <img class="part11" id="part" style="display: none;" src="" alt="Example part12">
+        </div>
+        <div>
+        <button id="left">&lt;</button>
+        <button id="right">&gt;</button>
+        <button id="play">&#10026;</button>
+        </div>
+        <div class="footer">
+                <br><img src="pics/22.jpg" alt="icon" class="icon"> &nbsp;
+                        青岛大学师范学院“花绘筑童心，非遗新未来”|“闽思”社会实践团队</div>
+        <audio preload="auto" autoplay loop>
+            <source src="music/音乐.mp3" type="audio/mp3">
+        </audio>
+        
+        <script>
+            document.addEventListener('click', function() {
+                var audio = document.querySelector('audio');
+                audio.play();
+                document.removeEventListener('click', arguments.callee);
+            });
+        </script>  
+    </body>
+</html>
+    
