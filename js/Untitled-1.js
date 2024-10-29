@@ -91,35 +91,13 @@ window.onload = function(){
 	var length = imgPlay[index].length;
 	var i = 0;
 	var using = null;
-	// if(index==11||index==12||index==13||index==16){
-	// 	// var part = document.getElementById("part");
-	// 	// console.log(part);
-	// 	// console.log(part.style);
-	// 	// console.log(part.style.display);
-	// 	// part.style.display = 'block';
-	// 	imgs[1].style.display = 'block';
-	// 	imgs[1].class = 'part'+index;
-	// 	// console.log(imgs[1].class);
-	// 	function nextImage(){
-	// 		if(i<length){
-	// 			loadImagePart1(index,i);
-	// 			i++;
-	// 			using = setTimeout(nextImage,500);
-	// 		}else{
-	// 			imgs[1].style.display = 'none';
-	// 			clearTimeout(using);
-	// 		}
-	// 	}
-	// 	nextImage();
-	// }
-	// else{
 		function nextImage(){
 		if(i<length){
 			loadImagePart2(index,i);
 			console.log(imgs[0]);
 			console.log(imgs[0].src);
 			i++;
-			using = setTimeout(nextImage,500);
+			using = setTimeout(nextImage,2000);
 		}else{
 			imgs[0].src = imgArr[index];
 			clearTimeout(using);
