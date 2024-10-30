@@ -92,7 +92,7 @@ window.onload = function(){
 			console.log(imgs[0]);
 			console.log(imgs[0].src);
 			i++;
-			using = setTimeout(nextImage,750);
+			using = setTimeout(nextImage,500);
 		}else{
 			imgs[0].src = imgArr[index];
 			clearTimeout(using);
