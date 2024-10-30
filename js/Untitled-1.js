@@ -4,15 +4,15 @@ const imgArr = ["pics/1.jpg","pics/2.jpg","pics/3.jpg","pics/4.jpg","pics/5.jpg"
 	"pics/11.jpg","pics/12.jpg","pics/13.jpg","pics/14.jpg","pics/15.jpg",
 	"pics/16.jpg","pics/17.jpg","pics/18.jpg","pics/19.jpg","pics/20.jpg","pics/21.jpg"];
 const imgPlay = [[],[],
-["pics/P1-1.PNG","pics/P1-2.PNG","pics/P1-3.PNG"],
-["pics/P2-1.PNG","pics/P2-2.PNG","pics/P2-3.PNG"],
-["pics/P3-1.PNG","pics/P3-2.PNG","pics/P3-3.PNG"],
-["pics/P4-1.PNG","pics/P4-2.PNG","pics/P4-3.PNG"],
-["pics/P5-1.PNG","pics/P5-2.PNG","pics/P5-3.PNG"],
-["pics/P6-1.PNG","pics/P6-2.PNG","pics/P6-3.PNG"],
-["pics/P7-1.PNG","pics/P7-2.PNG","pics/P7-3.PNG"],
-["pics/P8-1.PNG","pics/P8-2.PNG","pics/P8-3.PNG"],
-["pics/P9-1.PNG","pics/P9-2.PNG","pics/P9-3.PNG"],
+["pics/P1-1.png","pics/P1-2.png","pics/P1-3.png"],
+["pics/P2-1.png","pics/P2-2.png","pics/P2-3.png"],
+["pics/P3-1.png","pics/P3-2.png","pics/P3-3.png"],
+["pics/P4-1.png","pics/P4-2.png","pics/P4-3.png"],
+["pics/P5-1.png","pics/P5-2.png","pics/P5-3.png"],
+["pics/P6-1.png","pics/P6-2.png","pics/P6-3.png"],
+["pics/P7-1.png","pics/P7-2.png","pics/P7-3.png"],
+["pics/P8-1.png","pics/P8-2.png","pics/P8-3.png"],
+["pics/P9-1.png","pics/P9-2.png","pics/P9-3.png"],
 ["pics/12.1.png","pics/12.2.png","pics/12.3.png","pics/12.4.png","pics/12.5.png"],
 ["pics/13.1.png","pics/13.2.png","pics/13.3.png"],
 ["pics/14.1.png","pics/14.2.png","pics/14.3.png","pics/14.4.png"],
@@ -73,62 +73,33 @@ window.onload = function(){
 	};
 	loadImage(0);//初始化第一张图片
 
-	function loadImagePart1(index,i){
-		currentIndex = index;
-		var imgSrc = imgPlay[currentIndex][i];
-		imgs[1].src = imgSrc;
-		imgs[1].dataset.src = imgSrc;
-		intersectionObserver.observe(imgs[1]);
-	}
 	function loadImagePart2(index,i){
 		currentIndex = index;
-		var imgSrc = imgPlay[currentIndex][i];
-		imgs[0].src = imgSrc;
-		imgs[0].dataset.src = imgSrc;
+		var imgSrcT = imgPlay[currentIndex][i];
+		imgs[0].src = imgSrcT;
+		imgs[0].dataset.src = imgSrcT;
+
 		intersectionObserver.observe(imgs[0]);
 	}
 	play.onclick = function(){
 	var length = imgPlay[index].length;
 	var i = 0;
 	var using = null;
-	// if(index==11||index==12||index==13||index==16){
-	// 	// var part = document.getElementById("part");
-	// 	// console.log(part);
-	// 	// console.log(part.style);
-	// 	// console.log(part.style.display);
-	// 	// part.style.display = 'block';
-	// 	imgs[1].style.display = 'block';
-	// 	imgs[1].class = 'part'+index;
-	// 	// console.log(imgs[1].class);
-	// 	function nextImage(){
-	// 		if(i<length){
-	// 			loadImagePart1(index,i);
-	// 			i++;
-	// 			using = setTimeout(nextImage,500);
-	// 		}else{
-	// 			imgs[1].style.display = 'none';
-	// 			clearTimeout(using);
-	// 		}
-	// 	}
-	// 	nextImage();
-	// }
-	// else{
+	
 		function nextImage(){
 		if(i<length){
 			loadImagePart2(index,i);
 			console.log(imgs[0]);
 			console.log(imgs[0].src);
 			i++;
-			using = setTimeout(nextImage,500);
+			using = setTimeout(nextImage,750);
 		}else{
 			imgs[0].src = imgArr[index];
 			clearTimeout(using);
 		}
 	}
 	nextImage();
-// }
 	};
 
 };
-
 
